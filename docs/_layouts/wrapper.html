@@ -15,50 +15,57 @@
   </head>
   <body class="{{ page.type }}">
     <a class="a11y" href="#main">skip to content</a>
-    <div>
-        <header class="site-header" role="banner">
-            <div class="site-header-wrapper">
-                <div class="site-logo">
-                    <h1 class="logo"><a class="logo-link" href="/">QUnit API Docs</a></h1>
-                </div>
-                <nav role="navigation" class="site-nav">
-                    <ul class="site-nav-list">
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" href="/QUnit/">
-                                Main Methods
-                            </a>
-                        </li>
+    <header class="site-header" role="banner">
+        <div class="site-header-wrapper wrapper">
+            <a class="site-logo" href="/">
+                <img src="/img/logo-with-colored-text.svg" alt="QUnit">
+            </a>
+            <nav role="navigation" class="site-nav">
+                <ul class="site-nav-list">
+                    <li class="site-nav-item">
+                        <a class="site-nav-link" href="/QUnit/">
+                            Main Methods
+                        </a>
+                    </li>
 
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" href="/assert/">
-                                Assertions
-                            </a>
-                        </li>
+                    <li class="site-nav-item">
+                        <a class="site-nav-link" href="/assert/">
+                            Assertions
+                        </a>
+                    </li>
 
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" href="/config/">
-                                Configuration Tools
-                            </a>
-                        </li>
+                    <li class="site-nav-item">
+                        <a class="site-nav-link" href="/config/">
+                            Configuration Tools
+                        </a>
+                    </li>
 
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" href="/callbacks/">
-                                Callback Handlers
-                            </a>
-                        </li>
+                    <li class="site-nav-item">
+                        <a class="site-nav-link" href="/callbacks/">
+                            Callback Handlers
+                        </a>
+                    </li>
 
-                        <li class="site-nav-list-item">
-                            <a class="site-nav-list-link" href="/async">
-                                Async Control
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <div class="wrapper">
-            {{ content }}
+                    <li class="site-nav-item">
+                        <a class="site-nav-link" href="/async">
+                            Async Control
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </header>
+    <div class="body wrapper">
+        {{ content }}
     </div>
+    <footer class="body wrapper site-footer">
+        <p class="external-links">
+            <a href="https://github.com/qunitjs" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/qunitjs" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://gitter.im/qunitjs/qunit" target="_blank" rel="noopener noreferrer">Chat</a>
+        </p>
+
+        <p class="copyright">Copyright &copy; 2020 <a href="https://openjsf.org/" target="_blank" rel="noopener noreferrer">OpenJS Foundation</a> and contributors</p>
+    </footer>
   </body>
  </html>

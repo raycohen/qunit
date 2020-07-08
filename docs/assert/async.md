@@ -11,7 +11,9 @@ redirect_from:
   - "/stop/"
 ---
 
-## `async( [ acceptCallCount = 1 ] )`
+## assert.async()
+
+`async( [ acceptCallCount = 1 ] )`
 
 Instruct QUnit to wait for an asynchronous operation.
 

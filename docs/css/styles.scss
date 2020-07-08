@@ -1,0 +1,344 @@
+---
+---
+
+$size-1: 1rem;
+$size-2: 1.333rem;
+$size-3: 1.777rem;
+$size-4: 2.369rem;
+$size-5: 3.157rem;
+$size-spacing: $size-2;
+
+// https://brand.jquery.org/colors/#qunit-purple
+$color-brand: #9c3493; // bright purple  (primary)
+$color-accent: #390F39; // deep purple  (secondary)
+$color-black: #333;
+
+$color-white: #fff;
+$color-off-white: #eee;
+
+$screen-s: 480px;
+$screen-m: 768px;
+$screen-l: 992px;
+$screen-xl: 1200px;
+
+// --------------------------------------------------
+// Reset
+// -------------------------------------------------
+
+body {
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.skip,
+.a11y {
+  left: -1000em;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+// ---------------------------
+// -------- Site styles ------
+// ---------------------------
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+   color: $color-black;
+   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+   line-height: 1.5;
+
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   color: $color-black;
+   font-weight: bold;
+   margin: $size-spacing 0;
+}
+h1 { font-size: $size-5; }
+h2 {
+   color: $color-accent;
+   font-size: $size-4;
+}
+h3 { font-size: $size-3; }
+h4 { font-size: $size-2; }
+h5 { font-size: $size-1; }
+h6 { font-size: $size-1; }
+
+img {
+  max-width: 100%;
+}
+
+.body a,
+.body a:active,
+.body a:visited,
+.body a > code {
+   border-bottom: 2px solid #e6008c;
+   color: #000;
+   font-weight: bold;
+   text-decoration: none;
+}
+.body a:active {
+    bottom: -1px;
+    position: relative;
+}
+.body a:hover,
+.body a:hover > code,
+.body a:focus {
+   background-color: #fbdff0;
+   color: #000;
+   text-decoration: none;
+}
+
+pre, code {
+  // Menlo – macOS 10.6+. Preferred instead of Monaco, as the latter doesn't do bold/headings well.
+  // Consolas` – Windows Vista & newer
+  // DejaVu Sans Mono – Ubuntu, Fedora
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+}
+
+code {
+  padding: 0.2em 0.3em;
+  background: #f8f9fa;
+}
+
+.center {
+    text-align: center;
+}
+
+.warning {
+  padding: 0.5em 1em;
+  margin: 1em;
+  border-radius: 5px;
+
+  background: #fdf5c5;
+  border: 1px solid #e6d252;
+}
+
+// -------------------------------
+// -------- Site wide header -----
+// -------------------------------
+
+.site-header {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.site-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media (min-width: 40em) {
+    .site-header-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
+.site-logo {
+    color: $color-brand;
+    display: flex;
+    align-items: center;
+    font-size: $size-3;
+    font-weight: bold;
+    padding: $size-1 0;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    img {
+        height: $size-4;
+        margin-right: $size-spacing / 2;
+    }
+}
+.site-logo:hover {
+    color: $color-accent;
+}
+
+
+// -------------------------------------
+// ---------- Site Navigation ----------
+// -------------------------------------
+
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    &.opened {
+        display: block;
+    }
+
+    @media (min-width: $screen-m) {
+        display: inline-block;
+        position: relative;
+    }
+}
+
+.site-nav-list {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    @media (min-width: $screen-m) {
+        box-shadow: none;
+    }
+}
+
+.site-nav-item {
+    display: block;
+    height: 100%;
+
+    @media (min-width: $screen-m) {
+            display: inline-block;
+    }
+}
+
+.site-nav-link {
+    align-items: center;
+    color: $color-accent;
+    display: flex;
+    height: 100%;
+    padding: $size-1;
+    text-decoration: none;
+
+    &:active,
+    &:hover,
+    &:focus {
+        color: $color-brand;
+        text-decoration: none;
+    }
+}
+
+// -------------------------------------
+// ---------- Home page ----------------
+// -------------------------------------
+
+.wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 $size-spacing;
+}
+
+.body {
+    display: flex;
+}
+
+.sidebar {
+    flex: 0 0 220px;
+}
+
+.sidebar-list {
+    padding-left: 0;
+}
+
+.sidebar-item ~ .sidebar-item{
+    padding-top: 0.4rem;
+}
+
+table {
+  padding: 0;
+}
+tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+tr th,
+tr td {
+  text-align: left;
+  margin: 0;
+  padding: 0.3em 0.4em;
+  border: 1px solid #cccccc;
+}
+tr th {
+  background: #f8f9fa;
+  font-weight: bold;
+}
+tr th :first-child,
+tr td :first-child {
+  margin-top: 0;
+}
+tr th :last-child,
+tr td :last-child {
+  margin-bottom: 0;
+}
+
+// -------------------------------------
+// ---------- Site Footer --------------
+// -------------------------------------
+
+.site-footer {
+    border-top: 1px solid $color-off-white;
+    margin-top: $size-4;
+    padding: $size-4 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.external-links a {
+    margin: 0 0.5rem;
+}
+
+@import "highlight";
